@@ -29,7 +29,7 @@
  * THE SOFTWARE.
  */
 
-#include "arduino.h"
+#include "Arduino.h"
 #include <Wire.h>
 
 #ifndef __NFC_TAG_H__

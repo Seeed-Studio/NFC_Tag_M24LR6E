@@ -1,5 +1,9 @@
 ## NFC_Tag_M24LR6E
-[![Grove - NFC Tag](http://www.seeedstudio.com/depot/images/product/grove%20nfc%20tag.jpg)](http://www.seeedstudio.com/depot/Grove-NFC-Tag-p-1866.html?cPath=19_24)
+
+![](https://statics3.seeedstudio.com/images/product/grove%20nfc%20tag.jpg)
+
+[Grove - NFC Tag](https://www.seeedstudio.com/s/Grove-NFC-Tag-p-1866.html)
+
 Grove - NFC Tag is a highly integrated Near Field Communication Tag module,this module is I2C interface,which base on M24LR64E-R,M24LR64E-R have a 64-bit unique identifier and 64 -Kbit EEPROM.Grove - NFC Tag attach an independent PCB antenna which can easily stretch out of any enclosure you use, leaving more room for you to design the exterior of your project.
 
 ### Features
@@ -36,6 +40,8 @@ Grove - NFC Tag is a highly integrated Near Field Communication Tag module,this 
 
 ### Getting Started
 please follow the example sketch( **LedControl** ) and you can find some userful things in resources directory. Have fun!
+
+For more information please visit [wiki](http://wiki.seeedstudio.com/Grove_NFC_Tag/).
 
 
 ----

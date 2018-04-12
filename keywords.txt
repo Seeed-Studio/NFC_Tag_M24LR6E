@@ -1,0 +1,43 @@
+  
+#######################################
+# Syntax Coloring Map For 
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+Access_1110	KEYWORD1
+Access_1111	KEYWORD1
+Access_1100	KEYWORD1
+Access_0111	KEYWORD1
+noPassWd	KEYWORD1
+passWd_1	KEYWORD1
+passWd_2	KEYWORD1
+passWd_3	KEYWORD1
+
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+NfcTag	KEYWORD2
+init	KEYWORD2
+submitPassWd	KEYWORD2
+writePassWd	KEYWORD2
+sectorProtectConfig	KEYWORD2
+clearSectorProtect	KEYWORD2
+sectorWriteSockConfig	KEYWORD2
+getDSFID	KEYWORD2
+getAFI	KEYWORD2
+getRFU	KEYWORD2
+getUID	KEYWORD2
+getMemoryVolume	KEYWORD2
+getICNumber	KEYWORD2
+clearMemory	KEYWORD2
+writeByte	KEYWORD2
+writeBytes	KEYWORD2
+readByte	KEYWORD2
+readBytes	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################

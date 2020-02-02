@@ -1,33 +1,33 @@
 /*
- * NfcTag.h
- * a library to use NFC Tag
- * 
- * Copyright (c) 2014 seeed technology inc.
- * Website    : www.seeed.cc
- * Author     : lawliet zou
- * Create Time: March 2014
- * Change Log :
- *
- * The MIT License (MIT)
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
+    NfcTag.h
+    a library to use NFC Tag
+
+    Copyright (c) 2014 seeed technology inc.
+    Website    : www.seeed.cc
+    Author     : lawliet zou
+    Create Time: March 2014
+    Change Log :
+
+    The MIT License (MIT)
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    THE SOFTWARE.
+*/
 
 #include "Arduino.h"
 #include <Wire.h>
@@ -60,14 +60,14 @@
 #define IC_NUMBER_ADDR      2335    //1 byte
 
 
-enum AccessMode{
+enum AccessMode {
     USER_MODE = 0x0,    // offer simple read/write access right
     ROOT_MODE = 0x1,    // offer password change access right
 };
 
-enum SectorAccessRight{
+enum SectorAccessRight {
     //      **********************************
-    //      *  submit passWd *   no submit   * 
+    //      *  submit passWd *   no submit   *
     //b2,b1 *  Read * Write  *  Read * Write *
     // 00   *    1       1        1      0   *
     // 01   *    1       1        1      1   *
@@ -80,7 +80,7 @@ enum SectorAccessRight{
     Access_0111 = 3,
 };
 
-enum SectorSelectPassWd{
+enum SectorSelectPassWd {
     //00 => no passWd protect
     //01 => passWd 1
     //10 => passWd 2
@@ -91,20 +91,20 @@ enum SectorSelectPassWd{
     passWd_3 = 3,
 };
 
-class NfcTag
-{
-public:
-    NfcTag(AccessMode mode = USER_MODE){
-        if(mode == USER_MODE){
+class NfcTag {
+  public:
+    NfcTag(AccessMode mode = USER_MODE) {
+        if (mode == USER_MODE) {
             eeAddr = EEPROM_ADDR_E2_DISABLE;
-        }else{
+        } else {
             eeAddr = EEPROM_ADDR_E2_ENABLE;
         }
     };
     void init();
     void submitPassWd(byte* passWd);
     void writePassWd(byte* passWd);
-    void sectorProtectConfig(unsigned int sectorNumber, bool protectEnable, SectorAccessRight accessRight = Access_1110, SectorSelectPassWd passWd = noPassWd);
+    void sectorProtectConfig(unsigned int sectorNumber, bool protectEnable, SectorAccessRight accessRight = Access_1110,
+                             SectorSelectPassWd passWd = noPassWd);
     void clearSectorProtect(void);
     void sectorWriteSockConfig(unsigned int sectorNumber, bool sockEnable);
     byte getDSFID();
@@ -118,8 +118,8 @@ public:
     void writeBytes(unsigned int address, byte* buf, unsigned int len);
     byte readByte(unsigned int address);
     void readBytes(unsigned int address, byte* buf, unsigned int len);
-    
-private:
+
+  private:
     int eeAddr;
     void _EEPROM_Write_Byte(unsigned int address, byte data);
     void _EEPROM_Write_Bytes(unsigned int address, byte* buf, unsigned int len);

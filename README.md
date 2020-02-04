@@ -1,4 +1,4 @@
-## NFC_Tag_M24LR6E
+## NFC_Tag_M24LR6E  [![Build Status](https://travis-ci.com/Seeed-Studio/NFC_Tag_M24LR6E.svg?branch=master)](https://travis-ci.com/Seeed-Studio/NFC_Tag_M24LR6E)
 
 ![](https://statics3.seeedstudio.com/images/product/grove%20nfc%20tag.jpg)
 

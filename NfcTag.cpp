@@ -1,7 +1,7 @@
 #include "NfcTag.h"
 
 void NfcTag::init() {
-    Wire.begin(4, 16, 400000);
+    Wire.begin(4, 16, 400000U);
 }
 
 void NfcTag::submitPassWd(byte* passWd) {

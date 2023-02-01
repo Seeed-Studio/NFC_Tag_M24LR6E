@@ -143,14 +143,8 @@ byte NfcTag::_EEPROM_Read_Byte(unsigned int address) {
     Wire.write((int)(address >> 8)); // EEPROM_MSB
     Wire.write((int)(address & 0xFF)); // EEPROM_LSB
     Wire.endTransmission();
-
-    Wire.beginTransmission(eeAddr);
     Wire.requestFrom(eeAddr, 1);
-
-    if (Wire.available()) {
-        rdata = Wire.read();
-    }
-    Wire.endTransmission();         // end transmission
+    rdata = Wire.read();
     return rdata;
 }
 
@@ -161,13 +155,10 @@ unsigned int NfcTag::_EEPROM_Read_Bytes(unsigned int address, byte* buf, unsigne
     Wire.write((int)(address & 0xFF)); // EEPROM_LSB
     Wire.endTransmission();
 
-    Wire.beginTransmission(eeAddr);
-    Wire.requestFrom(eeAddr, len);
-
     int i = 0;
+    Wire.requestFrom(eeAddr, len);
     while (Wire.available()) {
         buf[i++] = Wire.read();
     }
-    Wire.endTransmission();         // end transmission
     return i;
 }

@@ -1,7 +1,11 @@
 #include "NfcTag.h"
 
 void NfcTag::init() {
+#ifdef ESP32    
     Wire.begin(4, 16, 400000U);
+#else
+    Wire.begin();
+#endif
 }
 
 void NfcTag::submitPassWd(byte* passWd) {
